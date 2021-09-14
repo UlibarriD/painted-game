@@ -70,10 +70,20 @@ def rectangle(start, end):
     end_fill()
 
 
-
+#Funcion creada por Eduardo Acosta A01375206   
 def triangle(start, end):
     """Draw triangle from start to end."""
-    pass  # TODO
+    #Definimos los puntos en el lienzo mediante los clics
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+    #Se utiliza rango 3 porque es el número de lados de un triangulo
+    for count in range(3):
+        forward(end.x - start.x)
+        left(120)
+
+    end_fill()
 
 
 def tap(x, y):
