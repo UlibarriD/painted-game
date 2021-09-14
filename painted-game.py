@@ -48,7 +48,16 @@ def square(start, end):
 
 def circle(start, end):
     """Draw circle from start to end."""
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(180):
+        forward(end.x - start.x)
+        left(2)
+
+    end_fill()
 
 
 def rectangle(start, end):
@@ -58,11 +67,13 @@ def rectangle(start, end):
     down()
     begin_fill()
 
-    forward((2 * end.x)- start.x)   # Multiplica por 2 para tener un lado doble de largo
+    # Multiplica por 2 para tener un lado doble de largo
+    forward((2 * end.x) - start.x)
     left(90)
-    forward(end.x- start.x)
+    forward(end.x - start.x)
     left(90)
-    forward((2 * end.x)- start.x)   # Multiplica por 2 para tener un lado doble de largo
+    # Multiplica por 2 para tener un lado doble de largo
+    forward((2 * end.x) - start.x)
     left(90)
     forward(end.x - start.x)
     left(90)
@@ -70,15 +81,15 @@ def rectangle(start, end):
     end_fill()
 
 
-#Funcion creada por Eduardo Acosta A01375206   
+# Funcion creada por Eduardo Acosta A01375206
 def triangle(start, end):
     """Draw triangle from start to end."""
-    #Definimos los puntos en el lienzo mediante los clics
+    # Definimos los puntos en el lienzo mediante los clics
     up()
     goto(start.x, start.y)
     down()
     begin_fill()
-    #Se utiliza rango 3 porque es el número de lados de un triangulo
+    # Se utiliza rango 3 porque es el número de lados de un triangulo
     for count in range(3):
         forward(end.x - start.x)
         left(120)
